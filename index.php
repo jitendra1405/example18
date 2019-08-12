@@ -29,20 +29,17 @@
       </div>
 </nav>
 
-<?php
-  //echo 'This is Index Page';
-
-  $sql = 'SELECT * FROM contact.contact';
-  $result = $pdo->query($sql);
-  if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo $row;
-    }
-} else {
-    echo "0 results";
+ <?php
+$query = "SELECT name "
+    . "FROM contact.contact";
+$result = $pdo->query($query);
+while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    echo "<tr>";
+    
+    echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
+    echo "</tr>";
 }
-
+$result->closeCursor();
 ?>
 
 
