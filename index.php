@@ -37,7 +37,7 @@
   $stmt->execute();
   $rowCount = $stmt->rowCount();
   $details = $stmt->fetch();
-  for($rowCount=1; $rowCount<=3; $rowCount++){
+  for($i=1; $i<=$rowCount; $i++){
   print_r ($details);
    
   }
