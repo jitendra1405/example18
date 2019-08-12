@@ -36,7 +36,7 @@ $result = $pdo->query($query);
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
     
-    echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
+    echo "<td>" . htmlspecialchars($row["name"]) . "</td><br/>";
     echo "</tr>";
 }
 $result->closeCursor();
