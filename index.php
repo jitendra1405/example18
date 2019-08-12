@@ -33,7 +33,7 @@
 $query = "SELECT name "
     . "FROM contact.contact";
 $result = $pdo->query($query);
-echo "<font size="3" color="red">NAME</font>";
+echo "<b>NAME</b><br/>";
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
     
