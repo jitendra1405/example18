@@ -32,7 +32,7 @@
 <?php
   //echo 'This is Index Page';
 
-  $sql = 'SELECT * FROM contact.contact';
+  $sql = 'SELECT name FROM contact.contact';
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
   $rowCount = $stmt->rowCount();
