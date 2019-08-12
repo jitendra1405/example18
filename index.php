@@ -32,15 +32,17 @@
 <?php
   //echo 'This is Index Page';
 
-  $sql = 'SELECT name FROM contact.contact';
-  $result = $db->query($sql);
-  while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-    echo "<tr>";
-    
-    echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
-    echo "</tr>";
+  $sql = 'SELECT id,name FROM contact.contact';
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> id: ". $row["id"]. " - Name: ". $row["name"]. " " . "<br>";
+    }
+} else {
+    echo "0 results";
 }
-$result->closeCursor();
+
 ?>
 
 
