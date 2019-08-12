@@ -33,6 +33,7 @@
 $query = "SELECT name "
     . "FROM contact.contact";
 $result = $pdo->query($query);
+echo "<b>Name</b>";
 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
     echo "<tr>";
     
