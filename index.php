@@ -33,15 +33,16 @@
   //echo 'This is Index Page';
 
   $sql = 'SELECT name FROM contact.contact';
-  $stmt = $pdo->prepare($sql);
-  $stmt->execute();
-  $rowCount = $stmt->rowCount();
-  $details = $stmt->fetch();
-  for($i=1; $i<=$rowCount; $i++){
-  print_r ($details);
-   
-  }
+  $result = $db->query($sql);
+  while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+    echo "<tr>";
+    
+    echo "<td>" . htmlspecialchars($row["name"]) . "</td>";
+    echo "</tr>";
+}
+$result->closeCursor();
 ?>
+
 
 </body>
 </html>
